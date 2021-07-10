@@ -1,3 +1,3 @@
 # React Router Hands-on
 
-리액트 라우터  사용해 봅시다
+react-router-dom을 사용해 봅시다
