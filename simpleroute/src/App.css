@@ -1,0 +1,45 @@
+:root {
+  --main-font-color: #646464;
+  --font-hover-color: #181818;
+  --button-bg-color: #e6e6e6;
+  --button-hover-bg-color: #87b1dd;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: fix;
+  border-bottom: 1px solid var(--main-font-color);
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+li {
+  margin: 1rem auto;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  color: var(--main-font-color);
+  background-color: var(--button-bg-color);
+}
+
+a:hover {
+  background-color: var(--button-hover-bg-color);
+  color: var(--font-hover-color);
+}
+
+h1 {
+  align-self: center;
+  color: var(--main-font-color);
+}
