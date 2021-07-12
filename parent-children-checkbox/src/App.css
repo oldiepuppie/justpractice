@@ -25,5 +25,7 @@ span {
 
 select {
   width: 10rem;
-  height: 1.5rem;
+  height: 2rem;
+  padding: .3rem;
+  font-size: 1rem;
 }
