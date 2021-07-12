@@ -13,6 +13,7 @@ export default function Checkbox() {
   
   return (
     <div className="checkbox-example">
+      <h2 className="checkbox-title">Checkbox</h2>
       <input type="checkbox" checked={isChecked} onChange={handleChecked} />
       <span>{isChecked ? "Checked!!" : "Unchecked"}</span>
     </div>

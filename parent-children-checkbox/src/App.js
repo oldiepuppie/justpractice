@@ -1,12 +1,14 @@
 import './App.css';
 import React from 'react';
 import Checkbox from './Components/Checkbox';
+import Select from './Components/Select';
 
 function App() {
   return (
     <div className="App">
-      <h1>test</h1>
+      <h1>test props and state</h1>
       <Checkbox />
+      <Select />
     </div>
   );
 }
