@@ -10,12 +10,15 @@ export default function Checkbox() {
     setIsChecked(event.target.checked);
     // event.target.checked를 참조 -> isChecked 변수의 값이 바뀐다
   };
-  
+
+  const colorCheck = isChecked ? 'green' : 'red';
+
+
   return (
-    <div className="checkbox-example">
+    <div className="example">
       <h2 className="checkbox-title">Checkbox</h2>
       <input type="checkbox" checked={isChecked} onChange={handleChecked} />
-      <span>{isChecked ? "Checked!!" : "Unchecked"}</span>
+      <span className={colorCheck}>{isChecked ? "Checked!!" : "Unchecked"}</span>
     </div>
   );
 }

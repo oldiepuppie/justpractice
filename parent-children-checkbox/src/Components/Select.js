@@ -12,7 +12,7 @@ export default function Select() {
   }
 
   return (
-    <div className="select-example">
+    <div className="example">
       <h2 className="select-title">
         Select
       </h2>
@@ -20,7 +20,7 @@ export default function Select() {
         {options}
       </select>
       <p>
-        식사 시간 : {choice}
+        식사 시간 : <span>{choice}</span>
       </p>
     </div>
   );

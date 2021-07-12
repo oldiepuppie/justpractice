@@ -1,0 +1,29 @@
+.example {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  background-color: #f0f0f0;
+  padding: 0.5rem;
+  width: 20rem;
+}
+
+span {
+  padding: 0.3rem;
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+select {
+  width: 10rem;
+  height: 1.5rem;
+}
