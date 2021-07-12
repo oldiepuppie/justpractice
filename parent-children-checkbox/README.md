@@ -3,7 +3,7 @@ props와 state를 연습하기 위해 만든 페이지입니다.
 
 
 
-## App.js
+## App.jsg
 파일 하단에 Parent와 Child 컴포넌트를 만들었습니다.  
 Parent에서 Child 컴포넌트를 사용할 때 props를 통해 값을 전달합니다.  
 자식 컴포넌트의 여는 태그와 닫는 태그 안에 넣은 값을 props.children으로 인식합니다.  
