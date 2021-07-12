@@ -20,7 +20,7 @@ export default function Select() {
         {options}
       </select>
       <p>
-        식사 시간 : <span>{choice}</span>
+        <span>{choice}</span> 맛있게 드세요.
       </p>
     </div>
   );

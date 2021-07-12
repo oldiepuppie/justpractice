@@ -13,7 +13,6 @@ export default function Checkbox() {
 
   const colorCheck = isChecked ? 'green' : 'red';
 
-
   return (
     <div className="example">
       <h2 className="checkbox-title">Checkbox</h2>
