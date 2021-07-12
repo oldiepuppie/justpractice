@@ -5,7 +5,6 @@ export default function PopUp() {
   const togglePopup = (event) => {
     showPopup ? setShowPopup(false) : setShowPopup(true);
   };
-  const buttonColor = showPopup ? null : 'closebutton';
 
   return (
     <div className="example">

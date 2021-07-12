@@ -45,17 +45,31 @@ button:hover {
 }
 
 .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000062;
+}
+
+.popup-inner {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   position: fixed;
   left: 50%;
-  top: 20%;
+  top: 50%;
   width: 50vw;
-  height: 35vw;
+  height: 50vw;
   transform: translate(-50%, -50%);
   background-color: #ffffff;
-  color: #000000;
+  color: #484848;
+  font-size: 1.2rem;
   border: 1px solid #000000;
 }
 
