@@ -27,7 +27,7 @@ function Parent() {
 
 function Child(props) {
   return (
-    <div className="child">This is a children : {props.children}</div>
+    <div className="child">This is a child : {props.children}</div>
   );
 }
 
