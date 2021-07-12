@@ -11,6 +11,7 @@ export default function PopUp() {
       <h2 className="popup-title">
         Pop Up
       </h2>
+      <p>버튼을 클릭하세요.</p>
       <button className="open" onClick={togglePopup}>
         open
       </button>
