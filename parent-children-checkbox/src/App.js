@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import Checkbox from './Components/Checkbox';
 import Select from './Components/Select';
+import PopUp from './Components/PopUp';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <h1>test props and state</h1>
       <Checkbox />
       <Select />
+      <PopUp />
     </div>
   );
 }

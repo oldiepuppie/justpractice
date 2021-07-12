@@ -29,3 +29,40 @@ select {
   padding: .3rem;
   font-size: 1rem;
 }
+
+button {
+  padding: 0.5rem;
+  background-color: #7c9fc5;
+  border: none;
+  border-radius: 0.2rem;
+  width: 10rem;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+button:hover {
+  background-color: #2975c7;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  top: 20%;
+  width: 50vw;
+  height: 35vw;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.closebutton {
+  background-color: #ffa500;
+}
+
+.closebutton:hover {
+  background-color: #e24f00;
+}
