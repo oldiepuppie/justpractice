@@ -25,15 +25,17 @@ export default function Input() {
   const [contents, setContents] = useState(mockMessages);
 
   const handleContents = () => {
-    const newMessage = {
-      id: uuidv4(),
-      name: name,
-      message: message
-    };
+    if (name.length !== 0 && message.length !== 0) {
+      const newMessage = {
+        id: uuidv4(),
+        name: name,
+        message: message
+      };
 
-    setContents([newMessage, ...mockMessages]);
-    setName('');
-    setMessage('');
+      setContents([newMessage, ...mockMessages]);
+      setName('');
+      setMessage('');
+    }
   }
 
   const handleInputText = (event) => {
@@ -62,7 +64,7 @@ export default function Input() {
         className="form-send"
         onClick={handleContents}
       >
-        mock btn
+        send
       </button>
 
       <div className="messages">
