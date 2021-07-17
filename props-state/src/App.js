@@ -3,6 +3,7 @@ import React from 'react';
 import Checkbox from './Components/Checkbox';
 import Select from './Components/Select';
 import PopUp from './Components/PopUp';
+import Input from './Components/Input';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Checkbox />
       <Select />
       <PopUp />
+      <Input />
     </div>
   );
 }
