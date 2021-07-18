@@ -40,7 +40,8 @@ CSS 대신 styled-components를 사용하여 스타일이 미리 적용된 컴�
 사용자가 작성한 이름과 메시지는 각각 name, message라는 변수에 할당되고  
 contents에는 메시지 데이터 배열이 할당됩니다.  
 contents의 초기값으로 사용하기 위해 더미데이터인 mockMessage를 만들었습니다.  
-send 버튼을 클릭하면 name, message 변수를 이용해 새 메시지 객체를 만들고 contents에 이 객체를 추가하는 이벤트 함수가 실행됩니다.
+send 버튼을 클릭하면 name, message 변수를 이용해 새 메시지 객체(newMessage)를 만들어  
+contents에 newMessage가 추가된 배열을 재할당하는 이벤트 함수가 실행됩니다.
 
 
 ## App.css
