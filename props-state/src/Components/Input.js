@@ -11,12 +11,10 @@ const StyledInput = styled.input`
 `;
 
 const StyledTextArea = styled.input`
-  height: 10vh;
   margin: 0.5rem 0 1rem;
   padding: 0.5rem;
   border-radius: none;
   border: 1px solid black;
-  overflow-y:auto;
 `;
 
 const InputButton = styled.button`
@@ -32,6 +30,29 @@ const InputButton = styled.button`
   &:hover {
     background-color: #2F5D62;
   }
+`;
+
+const MessageStyledUl = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
+const MessageStyledLi = styled.li`
+  margin: 1rem 0;
+`;
+
+const NameStyledSpan = styled.span`
+  margin: 0;
+  margin-right: 1rem;
+  padding: 0;
+  font-size: 1.1rem;
+`;
+
+const MessageStyledSpan = styled.span`
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
 `;
 
 export default function Input() {
@@ -101,16 +122,20 @@ export default function Input() {
       </InputButton>
 
       <div className="messages">
-        <ul className="messages-list">
+        <MessageStyledUl className="messages-list">
           {contents.map(content => {
             return(
-            <li className="single-message" key={content.id}>
-              <p className="username-elem">{content.name}</p>
-              <p className="message-elem">{content.message}</p>
-            </li>
+            <MessageStyledLi className="single-message" key={content.id}>
+              <NameStyledSpan>
+                {content.name}
+              </NameStyledSpan>
+              <MessageStyledSpan>
+                {content.message}
+              </MessageStyledSpan>
+            </MessageStyledLi>
             );
           })}
-        </ul>
+        </MessageStyledUl>
       </div>
     </div>
   );
