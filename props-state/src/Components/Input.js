@@ -79,17 +79,13 @@ export default function Input() {
   const [contents, setContents] = useState(mockMessages);
 
   const handleContents = () => {
-    if (name.length !== 0 && message.length !== 0) {
-      const newMessage = {
-        id: uuidv4(),
-        name: name,
-        message: message
-      };
+    const newMessage = {
+      id: uuidv4(),
+      name: name,
+      message: message
+    };
 
-      setContents([newMessage, ...mockMessages]);
-      setName('');
-      setMessage('');
-    }
+    setContents([newMessage, ...contents]);
   }
 
   const handleInputText = (event) => {
