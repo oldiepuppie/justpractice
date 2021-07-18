@@ -1,5 +1,38 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import styled from 'styled-components';
+
+const StyledInput = styled.input`
+  width: 30vw;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: none;
+  border: 1px solid black;
+`;
+
+const StyledTextArea = styled.input`
+  height: 10vh;
+  margin: 0.5rem 0 1rem;
+  padding: 0.5rem;
+  border-radius: none;
+  border: 1px solid black;
+  overflow-y:auto;
+`;
+
+const InputButton = styled.button`
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: #5E8B7E;
+  border: none;
+  border-radius: 0.2rem;
+  width: 10rem;
+  font-size: 1.3rem;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #2F5D62;
+  }
+`;
 
 export default function Input() {
   const mockMessages = [
@@ -49,23 +82,23 @@ export default function Input() {
   return (
     <div className="example">
       <h2 className="input-title">Form</h2>
-      <input
+      <StyledInput
         type="text"
         placeholder="name"
         value = {name}
         onChange = {handleInputText}
       />
-      <textarea 
-        placeholder="message"
+      <StyledTextArea
+        placeholder='message'
         value = {message}
         onChange = {handleMessage}
       />
-      <button 
+      <InputButton 
         className="form-send"
         onClick={handleContents}
       >
         send
-      </button>
+      </InputButton>
 
       <div className="messages">
         <ul className="messages-list">
