@@ -34,10 +34,13 @@ showPopup에 true값이 할당되어, 렌더링 조건에 따라 팝업이 뜹�
 
 
 ## Input.js
-CSS 대신 styled-components를 사용하였습니다.  
-즉, 스타일 적용을 위한 컴포넌트를 만들어 Input.js를 구성했습니다.  
+CSS 대신 styled-components를 사용하여 스타일이 미리 적용된 컴포넌트를 만든 뒤 Input 컴포넌트를 구성했습니다.  
+데이터 배열을 렌더링할 때 필요한 id를 자동으로 만들 수 있도록 uuid를 사용하였습니다.  
 사용자 이름과 메세지를 입력한 뒤에 하단의 send 버튼을 누르면 div.messages에 입력한 메세지가 추가됩니다.  
-
+사용자가 작성한 이름과 메시지는 각각 name, message라는 변수에 할당되고  
+contents에는 메시지 데이터 배열이 할당됩니다.  
+contents의 초기값으로 사용하기 위해 더미데이터인 mockMessage를 만들었습니다.  
+send 버튼을 클릭하면 name, message 변수를 이용해 새 메시지 객체를 만들고 contents에 이 객체를 추가하는 이벤트 함수가 실행됩니다.
 
 
 ## App.css
