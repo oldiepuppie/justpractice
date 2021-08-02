@@ -28,7 +28,7 @@ function App() {
   const [proverb, setProverb] = useState('버튼을 클릭하세요');
 
   useEffect(()=>{document.title = proverb},[proverb])
-  
+
   const buttonHandler = () => {
     let randomIndex = Math.floor(Math.random() * proverbs.length);
     setProverb(proverbs[randomIndex]);
