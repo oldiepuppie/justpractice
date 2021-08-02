@@ -1,9 +1,10 @@
-
+import Tester from './Components/Tester';
 
 function App() {
   return (
     <div className="App">
-      <h1>Are you running?</h1>
+      <h1>Testing Weather API</h1>
+      <Tester />
     </div>
   );
 }
