@@ -1,6 +1,7 @@
 import Tester from './Components/Tester';
 
 function App() {
+  document.title = 'Testing Weather API';
   return (
     <div className="App">
       <h1>Testing Weather API</h1>
