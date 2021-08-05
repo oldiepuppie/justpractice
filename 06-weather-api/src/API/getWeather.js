@@ -1,15 +1,15 @@
 // import { useEffect } from 'react';
 
-const getWeather = async (cityName, stateLoadingCallback,stateDataCallback) => {
+const getWeather = (cityName) => {
   const url = `api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.API_KEY}`;
-  stateLoadingCallback(true);
-  
-  const response = await fetch(url);
-  const data = await response.json();
 
-  stateLoadingCallback(false);
-  stateDataCallback(data);
-
+  const data = fetch(url)
+    .then(res => {res.json()})
+    .then(json => {console.log(json)});
+  // const data = await JSON.parse(response);
+  // stateDataCallback(response.weather);
+  console.log(data);
+  return data;
   // if (!cityName) return;
   // useEffect(() => {
   //   fetch(url)
