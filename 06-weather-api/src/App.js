@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 // import Tester from './Components/Tester';
-// import getWeather from './API/getWeather';
+import getWeather from './API/getWeather';
 
 function App() {
+  console.log(getWeather('london'));
   document.title = 'Testing Weather API';
   const [inputCity, setInputCity] = useState('');
-  const [data, setData] = useState('');
+  // const [data, setData] = useState('');
   const inputHandler = (event) => {
     setInputCity(event.target.value);
   }
@@ -23,7 +24,7 @@ function App() {
         onChange={inputHandler}
       />
       <button onClick={buttonHandler}>찾기</button>
-      <div>{String(data)}</div>
+      {/* <div>{String(data)}</div> */}
     </div>
   );
 }
