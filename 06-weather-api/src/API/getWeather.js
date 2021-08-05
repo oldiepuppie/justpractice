@@ -1,7 +1,8 @@
 // import { useEffect } from 'react';
+import apiKey from './api-key';
 
 const getWeather = (cityName) => {
-  const url = `api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.API_KEY}`;
+  const url = `api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
 
   const data = fetch(url)
     .then(res => {res.json()})
