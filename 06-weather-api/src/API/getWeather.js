@@ -1,7 +1,8 @@
 import apiKey from './api-key';
 
-// TODO 에러처리
 const getWeather = async (cityName) => {
+  if (!cityName) return;
+
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
 
   const rawData = await fetch(url);
