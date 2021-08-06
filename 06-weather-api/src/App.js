@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import WeatherContainer from './Components/WeatherContainer';
 import getWeather from './API/getWeather';
+import WeatherContainer from './Components/WeatherContainer';
+import CityInput from './Components/CityInput';
 
 function App() {
   document.title = 'Testing Weather API';
@@ -35,6 +36,11 @@ function App() {
   return (
     <div className="App">
       <h1>Testing Weather API</h1>
+
+      {/* TODO input, button을 다른 컴포넌트로 분리 */}
+      <div style={{color: 'red'}}>test here</div>
+      <CityInput buttonHandler={buttonHandler} />
+
       <input
         type="text"
         placeholder="Search by a city"
@@ -42,6 +48,7 @@ function App() {
         onChange={inputHandler}
       />
       <button onClick={buttonHandler}>찾기</button>
+
       {isCity ?
         <WeatherContainer
           city={city}

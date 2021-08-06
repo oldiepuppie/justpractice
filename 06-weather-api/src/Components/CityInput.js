@@ -1,9 +1,12 @@
 import { useState } from 'react';
 
-const cityInput = ({ buttonHandler }) => {
+const CityInput = ({ buttonHandler }) => {
   const [inputCity, setInputCity] = useState('');
   const inputHandler = (event) => {
     setInputCity(event.target.value);
+  }
+  const onClickHandler = () => {
+    buttonHandler(inputCity);
   }
 
   return (
@@ -14,9 +17,9 @@ const cityInput = ({ buttonHandler }) => {
         value={inputCity}
         onChange={inputHandler}
       />
-      <button onClick={buttonHandler}>찾기</button>
+      <button onClick={onClickHandler}>찾기</button>
     </div>
   );
 }
 
-export default cityInput;
+export default CityInput;
