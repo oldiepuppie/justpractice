@@ -27,7 +27,7 @@ function App() {
       setCity(name);
       setWeather(weather);
       setTemperature(temperature);
-      setIconSrc(icon);
+      setIconSrc(`http://openweathermap.org/img/wn/${icon}@2x.png`);
       setDescription(description);
     }
   }
