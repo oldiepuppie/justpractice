@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Tester from './Components/Tester';
+import WeatherContainer from './Components/WeatherContainer';
 import getWeather from './API/getWeather';
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
       />
       <button onClick={buttonHandler}>찾기</button>
       {isCity ?
-        <Tester
+        <WeatherContainer
           city={city}
           weather={weather}
           temperature={temperature}
