@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-const StyledCityInputBody = styled.div`
+const CityInputBody = styled.div`
   display: flex;
   justify-content: space-between;
 `;
@@ -27,7 +27,7 @@ const CityInput = ({ buttonHandler }) => {
 
   return (
     <div className='cityInput'>
-      <StyledCityInputBody>
+      <CityInputBody>
         <StyledCityInput
           type="text"
           placeholder="Search by a city"
@@ -37,7 +37,7 @@ const CityInput = ({ buttonHandler }) => {
         <CitySearchButton onClick={onClickHandler}>
           찾기
         </CitySearchButton>
-      </StyledCityInputBody>
+      </CityInputBody>
     </div>
   );
 }
