@@ -1,10 +1,17 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 import getWeather from './API/getWeather';
 import WeatherContainer from './Components/WeatherContainer';
 import CityInput from './Components/CityInput';
 
+const StyledAppDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 function App() {
   document.title = 'Testing Weather API';
+
   const [city, setCity] = useState('test');
   const [isCity, setIsCity] = useState(false);
   const [weather, setWeather] = useState('test');
@@ -29,20 +36,21 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Testing Weather API</h1>
-      <div style={{color: 'red'}}>test here</div>
-      <CityInput buttonHandler={buttonHandler} />
-      {isCity ?
-        <WeatherContainer
-          city={city}
-          weather={weather}
-          temperature={temperature}
-          icon={iconSrc}
-          description={description}
-        />
-        :
-        <div>input real city</div>
-      }
+      <StyledAppDiv>
+        <h1>Testing Weather API</h1>
+        <CityInput buttonHandler={buttonHandler} />
+        {isCity ?
+          <WeatherContainer
+            city={city}
+            weather={weather}
+            temperature={temperature}
+            icon={iconSrc}
+            description={description}
+          />
+          :
+          <div>input real city</div>
+        }
+      </StyledAppDiv>
     </div>
   );
 }
