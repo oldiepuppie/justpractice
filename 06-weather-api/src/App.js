@@ -7,6 +7,7 @@ import CityInput from './Components/CityInput';
 const StyledAppDiv = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 function App() {
@@ -36,21 +37,21 @@ function App() {
 
   return (
     <div className="App">
-      <StyledAppDiv>
-        <h1>Testing Weather API</h1>
-        <CityInput buttonHandler={buttonHandler} />
-        {isCity ?
-          <WeatherContainer
-            city={city}
-            weather={weather}
-            temperature={temperature}
-            icon={iconSrc}
-            description={description}
-          />
-          :
-          <div>input real city</div>
-        }
-      </StyledAppDiv>
+      <h1>Testing Weather API</h1>
+        <StyledAppDiv>
+          <CityInput buttonHandler={buttonHandler} />
+          {isCity ?
+            <WeatherContainer
+              city={city}
+              weather={weather}
+              temperature={temperature}
+              icon={iconSrc}
+              description={description}
+            />
+            :
+            <div>input real city</div>
+          }
+        </StyledAppDiv>
     </div>
   );
 }

@@ -4,14 +4,20 @@ import styled from 'styled-components';
 const CityInputBody = styled.div`
   display: flex;
   justify-content: space-between;
+  height: 2rem;
+  margin: 1.5rem 0;
+  padding: .5rem;
 `;
 
 const StyledCityInput = styled.input`
   width: 80vw;
+  height: auto;
+  font-size: 1.1rem;
 `;
 
 const CitySearchButton = styled.button`
   width: 15vw;
+  height: auto;
 `;
 
 const CityInput = ({ buttonHandler }) => {

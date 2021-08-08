@@ -6,7 +6,12 @@ const WeatherContainerBox = styled.div`
   align-items: center;
   font-size: 1.5rem;
 
+  div {
+    margin: .5rem;
+  }
+
   img {
+    margin: .5rem;
     width: 50vw;
     height: 50vw
   }
