@@ -23,10 +23,14 @@ function App() {
   // TODO 잘못된 도시 이름을 입력했을 때 어떻게 처리할지
   const buttonHandler = async (inputCity) => {
     const weatherData = await getWeather(inputCity);
-    const {name, weather, temperature, icon, description} = weatherData;
 
+    if (typeof weatherData === String) {
+      return;
+    }
+
+    const {name, weather, temperature, icon, description} = weatherData;
     if (name) {
-      setIsCity(true);
+      // setIsCity(true);
       setCity(name);
       setWeather(weather);
       setTemperature(temperature);
@@ -40,7 +44,7 @@ function App() {
       <h1>Testing Weather API</h1>
         <StyledAppDiv>
           <CityInput buttonHandler={buttonHandler} />
-          {isCity ?
+          {/* {isCity ?} */}
             <WeatherContainer
               city={city}
               weather={weather}
@@ -48,9 +52,6 @@ function App() {
               icon={iconSrc}
               description={description}
             />
-            :
-            <div>input real city</div>
-          }
         </StyledAppDiv>
     </div>
   );
