@@ -6,9 +6,9 @@ const getWeather = async (cityName) => {
   const rawData = await fetch(url);
   const jsonData = await rawData.json();
 
-  if (jsonData.message === 'city not found') {
-    return 'city not found';
-  }
+  // if (jsonData.message === 'city not found') {
+  //   return 'city not found';
+  // }
 
   const weatherData = {
     name: jsonData.name,

@@ -12,9 +12,8 @@ const StyledAppDiv = styled.div`
 
 function App() {
   document.title = 'Testing Weather API';
-
+  const [isData, setIsData] = useState(false);
   const [city, setCity] = useState('test');
-  const [isCity, setIsCity] = useState(false);
   const [weather, setWeather] = useState('test');
   const [temperature, setTemperature] = useState('test');
   const [iconSrc, setIconSrc] = useState('test');
@@ -23,20 +22,14 @@ function App() {
   // TODO 잘못된 도시 이름을 입력했을 때 어떻게 처리할지
   const buttonHandler = async (inputCity) => {
     const weatherData = await getWeather(inputCity);
-
-    if (typeof weatherData === String) {
-      return;
-    }
-
     const {name, weather, temperature, icon, description} = weatherData;
-    if (name) {
-      // setIsCity(true);
-      setCity(name);
-      setWeather(weather);
-      setTemperature(temperature);
-      setIconSrc(`http://openweathermap.org/img/wn/${icon}@2x.png`);
-      setDescription(description);
-    }
+
+    setIsData(true);
+    setCity(name);
+    setWeather(weather);
+    setTemperature(temperature);
+    setIconSrc(`http://openweathermap.org/img/wn/${icon}@2x.png`);
+    setDescription(description);
   }
 
   return (
@@ -44,14 +37,17 @@ function App() {
       <h1>Testing Weather API</h1>
         <StyledAppDiv>
           <CityInput buttonHandler={buttonHandler} />
-          {/* {isCity ?} */}
-            <WeatherContainer
-              city={city}
-              weather={weather}
-              temperature={temperature}
-              icon={iconSrc}
-              description={description}
-            />
+          {isData? 
+          <WeatherContainer
+            city={city}
+            weather={weather}
+            temperature={temperature}
+            icon={iconSrc}
+            description={description}
+          />
+          :
+          <div>check your input</div>
+          }
         </StyledAppDiv>
     </div>
   );
