@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ExampleButtonClick from './Components/ExampleButtonClick';
 
 const Title = styled.h1`
   font-size: 2.5em;
@@ -54,6 +55,10 @@ function App() {
         <h2>input elements</h2>
         <Input defaultValue="김코딩" type="text" />
         <Input defaultValue="김코딩" type="text" inputColor="#AA1945" />
+      </div>
+      <div>
+        <h2>useRef</h2>
+        <ExampleButtonClick />
       </div>
     </Wrapper>
   );
