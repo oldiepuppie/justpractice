@@ -1,0 +1,85 @@
+.example {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  background-color: #f0f0f0;
+  padding: 0.5rem;
+}
+
+.child {
+  margin-bottom: 3rem;
+}
+
+span {
+  padding: 0.3rem;
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+select {
+  width: 10rem;
+  height: 2rem;
+  padding: .3rem;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+  background-color: #7c9fc5;
+  border: none;
+  border-radius: 0.2rem;
+  width: 10rem;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+button:hover {
+  background-color: #2975c7;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000062;
+}
+
+.popup-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 50vw;
+  height: 50vw;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  color: #484848;
+  font-size: 1.2rem;
+  border: 1px solid #000000;
+}
+
+.closebutton {
+  background-color: #ffa500;
+}
+
+.closebutton:hover {
+  background-color: #e24f00;
+}
