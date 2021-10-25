@@ -11,7 +11,7 @@ const HeaderOuter = styled.div`
   background-color: #85C1E9;
   padding: 1rem;
 
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: 1081px) {
     width: 100vw;
     background-color: white;
     border-bottom: 1px solid #757575;
@@ -23,7 +23,7 @@ const HeaderOuter = styled.div`
 const Wings = styled.div`
   display: none;
 
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: 1081px) {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -40,7 +40,7 @@ const Center = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: 1081px) {
     flex-direction: row;
   }
 `;
@@ -56,7 +56,7 @@ const Input = styled.input`
   font-size: 1.2rem;
   text-align: center;
 
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: 1081px) {
     width: 300px;
   }
 `;
@@ -76,38 +76,43 @@ const Button = styled.button`
 `;
 
 
-export default function Header() {
+export default function Header({ isInput }) {
   return (
     <HeaderOuter className="header">
       <Wings className="title">
         <img src="images/logo-transparent.png" alt="logo" />
         <h1>거기날씨</h1>
       </Wings>
-      <Center className="headerCenter">
-        <InputAndSubmit className="inputAndSubmit">
-          <Input type="text" placeholder="위치 검색" />
-          <Button grey>
-            <FontAwesomeIcon icon={faSearch} />
-          </Button>
-        </InputAndSubmit>
-        <Buttons className="headerButtons">
-          <Button>
-            <FontAwesomeIcon icon={faSun}/>
-          </Button>
-          <Button>
-            <FontAwesomeIcon icon={faCloud}/>
-          </Button>
-          <Button>
-            <FontAwesomeIcon icon={faCloudRain}/>
-          </Button>
-          <Button>
-            <FontAwesomeIcon icon={faPooStorm}/>
-          </Button>
-          <Button>
-            <FontAwesomeIcon icon={faSnowflake}/>
-          </Button>
-        </Buttons>
-      </Center>
+      {
+        isInput?
+          <Center className="headerCenter">
+            <InputAndSubmit className="inputAndSubmit">
+              <Input type="text" placeholder="위치 검색" />
+              <Button grey>
+                <FontAwesomeIcon icon={faSearch} />
+              </Button>
+            </InputAndSubmit>
+            <Buttons className="headerButtons">
+              <Button>
+                <FontAwesomeIcon icon={faSun}/>
+              </Button>
+              <Button>
+                <FontAwesomeIcon icon={faCloud}/>
+              </Button>
+              <Button>
+                <FontAwesomeIcon icon={faCloudRain}/>
+              </Button>
+              <Button>
+                <FontAwesomeIcon icon={faPooStorm}/>
+              </Button>
+              <Button>
+                <FontAwesomeIcon icon={faSnowflake}/>
+              </Button>
+            </Buttons>
+          </Center>
+        :
+          ''
+      }
       <Wings>
         <Button isText>로그인</Button>
         <Button isText>회원가입</Button>

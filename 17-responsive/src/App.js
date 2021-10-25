@@ -5,8 +5,7 @@ import Menu from './components/Menu'
 function App() {
   return (
     <div className="App">
-      <Header />
-      {/* <MapMarkerButton /> */}
+      <Header isInput />
       <Map />
       <Menu />
     </div>

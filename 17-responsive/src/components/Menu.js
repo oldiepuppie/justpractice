@@ -7,26 +7,33 @@ const Outer = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100vw;
-  background-color: #85C1E9;
+  height: 5rem;
 
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: 1081px) {
     width: 1080px;
     position: relative;
   }
 `;
 
 const Buttons = styled.div`
-  @media screen and (min-width: 1080px) {
+  background-color: #85C1E9;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 1081px) {
     background-color: #85C1E9;
     border: 1px solid black;
-    position: fixed;
-    right: 0;
-    bottom: 0;
+    width: 400px;
   }
 `;
 
 const Button = styled.button`
-  background-color: #85C1E9;
+  // background-color: #85C1E9;
   padding: .5rem;
   margin: .5rem;
   font-size: 2rem;

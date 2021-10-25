@@ -9,7 +9,7 @@ const Inner = styled.div`
   width: 400px;
   height: 70vh;
 
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: 1081px) {
     width: 30vw;
     bottom: 5rem;
   }
