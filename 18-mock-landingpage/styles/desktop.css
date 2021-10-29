@@ -1,14 +1,21 @@
 /* css 시작 */
 header {
+  width: 100vw;
   height: 125px;
   position: sticky;
   top: 0;
   left: 0;
   background-color: white;
   border-bottom: 1px solid black;
+  font-size: 1.5rem;
 }
 
 #gradient-here {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   height: 100%;
   width: 100%;
@@ -29,7 +36,6 @@ section.page {
 
 h2 {
   font-size: 3rem;
-  margin: 0 0 3rem 0;
 }
 
 p {
@@ -54,7 +60,14 @@ article.half-page {
   align-items: center;
 }
 
-/* div.picture-png {
-  border: 1px solid blue;
+/* footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 33vw;
+  height: 70px;
+  background-color: white;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  z-index: 100;
 } */
-/* CSS 끝 */
