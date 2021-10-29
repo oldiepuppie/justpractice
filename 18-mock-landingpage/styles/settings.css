@@ -1,0 +1,42 @@
+:root {
+	/* 색상 */
+	--page-bg-color: #FEF9EF;
+	--mobile-header-color: #A2D2FF;
+	--button-bg-normal: #DDD;
+	--button-bg-positive: #419300;
+	--button-bg-negative: #FF4545;
+	--font-validation-negative: #FF4545;
+	--font-validation-positive: #419300;
+	--button-bg-edit: #2F6ECB;
+	--button-bg-google: #EA4335;
+	--modal-bg-color: #00000066;
+	--modal-confirm-bg: #F2F2F2;
+	--modal-confirm-button-bg: #C4C4C4;
+
+	/* 길이 - 모바일 */
+	--mobile-page-height: calc(100vh - 200px);
+	--mobile-header-height: 200px;
+	--mobile-menubar-height: 70px;
+	
+	/* 길이 - 데스크탑*/
+	--desktop-page-height: calc(100vh - 125px);
+	--desktop-header-height: 125px;
+}
+
+/* 속성값 통일 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin:0;
+}

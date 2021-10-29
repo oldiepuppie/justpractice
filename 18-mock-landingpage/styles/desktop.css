@@ -1,0 +1,60 @@
+/* css 시작 */
+header {
+  height: 125px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+
+#gradient-here {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#FEF9EF, #FFF5DC, #D7F9FF, #AAF2FF);
+}
+
+section.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: var(--desktop-page-height);
+  border-bottom: 1px solid red;
+}
+
+h2 {
+  font-size: 3rem;
+  margin: 0 0 3rem 0;
+}
+
+p {
+  /* border: 1px solid green; */
+  margin: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+div.contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article.half-page {
+  display: flex;
+  width: 50vw;
+  flex-direction: column;
+  justify-content: space;
+  align-items: center;
+}
+
+/* div.picture-png {
+  border: 1px solid blue;
+} */
+/* CSS 끝 */

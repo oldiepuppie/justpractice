@@ -5,69 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mock landing page</title>
-  <style>
-    html {
-      padding: 0;
-      margin: 0;
-    }
-
-    body {
-      padding: 0;
-      margin:0;
-    }
-
-    #gradient-here {
-      margin: 0;
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(#fef9ef, white, #d4f9ff);
-    }
-
-    section.page {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0;
-      margin: 0;
-      width: 100vw;
-      height: 100vh;
-      border-bottom: 1px solid red;
-    }
-
-    p {
-      border: 1px solid green;
-    }
-
-    div.contents {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    article.half-page {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space;
-      align-items: center;
-    }
-
-    div.picture-png {
-      border: 1px solid blue;
-    }
-  </style>
+  <link rel="stylesheet" href="styles/settings.css">
+  <link rel="stylesheet" href="styles/desktop.css">
+  <!-- <link rel="stylesheet" href="mobile.css"> -->
 </head>
+
 <body>
+  <!-- html 시작 -->
   <div id="gradient-here">
+    <header>
+      헤더는 125px;
+    </header>
     <section class="page" id="first">
       <div class="contents">
         <article class="half-page">
           <p class="desc">
             일기 예보가 <br>
-            믿음직 스럽지 <br>
-            못하시다구요?<br>
+            믿음직스럽지 못하시다구요?<br>
           </p>
+          <div class="picture-png">
+            <img src="images/phone-and-human.png" alt="human with phone">
+          </div>
         </article>
 
         <article class="half-page">
@@ -77,12 +35,15 @@
             여러분도 하늘사진을 공유하고 <br>
             동네 날씨예보관이 되어 보세요!<br>
           </p>
+          <div class="picture-png">
+            <img src="images/town.png" alt="street">
+          </div>
         </article>
       </div>
     </section>
 
     <section class="page" id="2">
-      <h1>step 1</h1>
+      <h2>step 1</h2>
       <div class="contents">
         <article class="half-page">
           <p class="desc">
@@ -109,14 +70,13 @@
     </section>
 
     <section class="page" id="3">
-      <h1>step 2</h1>
+      <h2>step 2</h2>
       <div class="contents">
         <article class="half-page">
           <p class="desc">
             자신이 있는 곳의 <br>
             하늘 사진을 찍어서 <br>
-            예보글을 <br>
-            작성하세요.
+            예보글을 작성하세요.<br>
           </p>
           <div class="picture-png">
             <img src="images/photos.png" alt="photos">
@@ -138,7 +98,7 @@
     </section>
 
     <section class="page" id="4">
-      <h1>step 3</h1>
+      <h2>step 3</h2>
       <div class="contents">
         <article class="half-page">
           <p class="desc">
@@ -163,10 +123,8 @@
         </article>
       </div>
     </section>
-
-    <!-- <p>그라데이션 테스트</p>
-    <p>시작 #FEF9EF</p>
-    <p>끝 #A2D2FF</p> -->
   </div>
+  <!-- html 끝 -->
 </body>
+
 </html>
