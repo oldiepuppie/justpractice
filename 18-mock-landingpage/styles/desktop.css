@@ -1,4 +1,22 @@
 /* css 시작 */
+@keyframes fadein {
+  from {
+    color: transparent;
+  }
+}
+
+@keyframes slide-to-right {
+  from {
+    margin-right: 100%;
+  }
+}
+
+@keyframes slide-to-left {
+  from {
+    margin-left: 100%;
+  }
+}
+
 header {
   width: 100vw;
   height: 125px;
@@ -11,7 +29,6 @@ header {
 }
 
 #gradient-here {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +36,7 @@ header {
   margin: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(#FEF9EF, #FFF5DC, #D7F9FF, #AAF2FF);
+  background: linear-gradient(#fff, #FEF9EF, #FFF5DC, #D7F9FF, #AAF2FF);
 }
 
 section.page {
@@ -36,6 +53,9 @@ section.page {
 
 h2 {
   font-size: 3rem;
+  animation-duration: 3s;
+  animation-name: fadein;
+  animation-iteration-count: 1;
 }
 
 p {
@@ -44,6 +64,9 @@ p {
   text-align: center;
   font-size: 1.5rem;
   line-height: 2rem;
+  animation-duration: 3s;
+  animation-name: fadein;
+  animation-iteration-count: 1;
 }
 
 div.contents {
@@ -56,13 +79,36 @@ article.half-page {
   display: flex;
   width: 50vw;
   flex-direction: column;
-  justify-content: space;
+  justify-content: space-around;
   align-items: center;
 }
 
-/* footer {
-  position: fixed;
-  right: 0;
+.picture-png {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture-png.left {
+  animation-duration: 3s;
+  animation-name: slide-to-right;
+  animation-iteration-count: 1;
+}
+
+.picture-png.right {
+  animation-duration: 3s;
+  animation-name: slide-to-left;
+  animation-iteration-count: 1;
+}
+
+/* #last-page {
+  height: calc(var(--desktop-page-height) - 70px);
+  border: none;
+}
+
+footer {
+  position: sticky;
+  left: 100%;
   bottom: 0;
   width: 33vw;
   height: 70px;
