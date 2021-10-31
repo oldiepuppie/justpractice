@@ -11,5 +11,4 @@ CSS 파일
 *인프런 - 1분코딩 - 인터랙티브 웹 개발 제대로 시작하기*
 - transform
 - transition
-- @keyframes
 - animation
