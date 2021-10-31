@@ -1,5 +1,4 @@
-/* css 시작 */
-@keyframes fadein {
+/* @keyframes fadein {
   from {
     color: transparent;
   }
@@ -15,7 +14,7 @@
   from {
     margin-left: 100%;
   }
-}
+} */
 
 header {
   width: 100vw;

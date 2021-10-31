@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sprite animation</title>
+  <style>
+    @keyframes thunder-down {
+      to {
+        background-position: -800px;
+      }
+    }
+
+    body {
+      position: relative;
+      height: calc(100vh - 3rem);
+    }
+
+    .thunder-box {
+      width: 200px;
+      height: 250px;
+      background: url('../images/thunder.jpg') no-repeat 0 0 / auto 250px;
+      animation: thunder-down 1s infinite steps(4);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>sprite animation</h1>
+  <div id="source">
+    <h2>이미지 출처</h2>
+    <a href="http://www.freepik.com">Designed by upklyak / Freepik</a>
+  </div>
+  <div>
+    <h2>번개</h2>
+    <div class="thunder-box">
+    </div>
+  </div>
+  <footer>
+    <a href="https://www.inflearn.com/course/interactive_web/dashboard">
+      인프런 - 1분코딩 - 인터랙티브 웹 개발 제대로 시작하기
+    </a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation</title>
+  <style>
+    @keyframes sample {
+      0% {
+        tranform: translate(0, 0);
+      }
+      50% {
+        transform: translate(50vw, 0);
+        background: greenyellow;
+      }
+      100% {
+        transform: translate(70vw, 70vh);
+        background: green;
+      }
+    }
+
+    body {
+      position: relative;
+      height: calc(100vh - 3rem);
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      border: 2px solid #000;
+      background: rgb(245, 255, 202);
+      animation: sample 3s linear forwards;
+    }
+
+    .box:hover {
+      animation-play-state: paused;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Animation</h1>
+  <div class="box">
+    BOX
+  </div>
+  <footer>
+    <a href="https://www.inflearn.com/course/interactive_web/dashboard">
+      인프런 - 1분코딩 - 인터랙티브 웹 개발 제대로 시작하기
+    </a>
+  </footer>
+</body>
+</html>
