@@ -1,4 +1,6 @@
 # Test Props and State
+*코드스테이츠 Software Engineering Bootcamp - Section 1 - [React] 기초*
+
 props와 state를 연습하기 위해 만든 페이지입니다.
 
 
