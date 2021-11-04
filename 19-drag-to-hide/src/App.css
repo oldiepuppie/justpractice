@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Armata&family=Noto+Sans+KR:wght@100;500;700&family=Ultra&display=swap');
+
+/*
+font-family: 'Armata', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Ultra', serif;
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  position: relative;
+  width: 600px;
+  height: 80vh;
+  background-color: hsla(271, 49%, 34%, 1);
+  color: white;
+  padding: 3rem;
+}
+
+h1 {
+  font-family: 'Ultra', sans-serif;
+}
+
+p, span, ul, li, h2, h3 {
+  padding: 0;
+  margin: 0;
+  font-family: 'Armata', 'Noto Sans KR', sans-serif;
+}
