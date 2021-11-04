@@ -1,16 +1,19 @@
 import styled from "styled-components";
-
-// ul {
-//   list-style-type: none;
-// }
+import { ReactComponent as UpwardArrow } from '../Icon/triangle.svg';
 
 const BoxesComponent = styled.div`
   position: absolute;
-  bottom: 0;
-  overflow: scroll;
+  bottom: -330px;
+  // -> 0
+  overflow: hidden;
+  // -> scroll
   background-color: hsla(320, 100%, 41%, 1);
-  padding : 1rem;
+  padding : 0.2rem 2rem;
   height: 40vh;
+
+  & svg {
+    margin: 1rem;
+  }
 `;
 
 const BoxContainer = styled.ul`
@@ -34,7 +37,9 @@ const Box = styled.li`
 const Boxes = () => {
   return (
     <BoxesComponent className="Boxes">
-      <h2>Drag me up and Drop.</h2>
+      <h2>
+        <UpwardArrow width='15px' height='20px' fill='white'/>
+      </h2>
       <BoxContainer>
         <Box>
           apple

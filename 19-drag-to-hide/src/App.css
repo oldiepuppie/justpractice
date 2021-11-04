@@ -16,4 +16,6 @@ h1 {
 
 p, span, ul, li, h2, h3 {
   font-family: 'Armata', 'Noto Sans KR', sans-serif;
+  margin: 0;
+  padding: 0;
 }
