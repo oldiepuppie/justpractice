@@ -10,21 +10,10 @@ font-family: 'Ultra', serif;
   box-sizing: border-box;
 }
 
-.App {
-  position: relative;
-  width: 600px;
-  height: 80vh;
-  background-color: hsla(271, 49%, 34%, 1);
-  color: white;
-  padding: 3rem;
-}
-
 h1 {
   font-family: 'Ultra', sans-serif;
 }
 
 p, span, ul, li, h2, h3 {
-  padding: 0;
-  margin: 0;
   font-family: 'Armata', 'Noto Sans KR', sans-serif;
 }

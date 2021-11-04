@@ -34,7 +34,7 @@ const Box = styled.li`
 const Boxes = () => {
   return (
     <BoxesComponent className="Boxes">
-      <h2>This is a component called Boxes.</h2>
+      <h2>Drag me up and Drop.</h2>
       <BoxContainer>
         <Box>
           apple
