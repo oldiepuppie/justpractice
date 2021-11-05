@@ -9,7 +9,7 @@
   - xml 조회 가능, 반환은 잘 안 되는듯함
   - xml-js로 xml -> json 변환
     - 예상한 형태로 변환되지 않음
-    - convert의 인자로 option까지 넘겨야 원하는대로 동작
+      - convert의 인자로 option까지 넘겨야 원하는대로 동작
 - 반환 시도
   - pending만 반환함
     - async, await 사용 후 제대로 동작함
