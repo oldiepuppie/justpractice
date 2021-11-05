@@ -1,4 +1,4 @@
-# drag-to-hide
+# DragToShowAndHide
 
 ## 내용
 - 페이지 하단의 상자를 위로 드래그하면 아래쪽에 숨어있던 내용이 나타난다.
