@@ -1,18 +1,20 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as UpwardArrow } from '../Icon/triangle.svg';
 
 const BoxesComponent = styled.div`
   position: absolute;
-  bottom: -330px;
-  // -> 0
-  overflow: hidden;
-  // -> scroll
+  bottom: ${props => props.displayed ? '0' : '-330px'};
+  overflow: ${props => props.displayed ? 'scroll' : 'hidden'};
+  transition-duration: .5s;
   background-color: hsla(320, 100%, 41%, 1);
   padding : 0.2rem 2rem;
   height: 40vh;
 
   & svg {
     margin: 1rem;
+    cursor: pointer;
+    transform: ${props => props.displayed? 'rotate(180deg)' : null};
   }
 `;
 
@@ -35,10 +37,16 @@ const Box = styled.li`
 `;
 
 const Boxes = () => {
+  const [ isDisplayed, setIsDisplayed ] = useState(false);
+
+  const onClickHandler = () => {
+    setIsDisplayed(prev => !prev);
+  }
+
   return (
-    <BoxesComponent className="Boxes">
+    <BoxesComponent className="Boxes" displayed={isDisplayed}>
       <h2>
-        <UpwardArrow width='15px' height='20px' fill='white'/>
+        <UpwardArrow width='15px' height='20px' fill='white' onClick={onClickHandler} />
       </h2>
       <BoxContainer>
         <Box>
