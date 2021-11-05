@@ -4,7 +4,7 @@ import { ReactComponent as UpwardArrow } from '../Icon/triangle.svg';
 
 const BoxesComponent = styled.div`
   position: absolute;
-  bottom: ${props => props.displayed ? '0' : '-330px'};
+  bottom: ${props => props.displayed ? '0' : '-250px'};
   overflow: ${props => props.displayed ? 'scroll' : 'hidden'};
   transition-duration: .5s;
   background-color: hsla(320, 100%, 41%, 1);
