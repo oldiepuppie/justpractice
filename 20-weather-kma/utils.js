@@ -18,9 +18,7 @@ module.exports = {
         })
         .then(res => res.data)
         .then(xml => {
-          console.log('**xml**', xml);
           let json = convert.xml2json(xml, {compact: true, spaces: 4});
-          console.log('**json**', json);
           return json;
         })
         .catch(err => console.log(err))
