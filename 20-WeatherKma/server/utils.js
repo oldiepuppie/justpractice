@@ -14,10 +14,10 @@ module.exports = {
           url: ncstExample
         })
         .then(res => res.data)
-        .catch(err => console.log(err))
+        .catch(err => { return { status: 500, message: err } })
       );
     } catch {
-      return { error: '초단기실황조회 실패', data: null };
+      return { error: '초단기실황 조회 실패', data: null };
     }
   },
 
@@ -32,7 +32,7 @@ module.exports = {
           url: srtFcstExample
         })
         .then(res => res.data)
-        .catch(err => console.log(err))
+        .catch(err => { return { status: '500', message: err } })
 
         // axios.get('http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst', {
         //   params: {
@@ -46,9 +46,11 @@ module.exports = {
         //     "ny": ny
         //   }
         // })
+        // [Error]
+        // TypeError: Converting circular structure to JSON --> starting at object with constructor 'ClientRequest'
       );
     } catch {
-      return { error: '초단기예보조회 실패', data: null };
+      return { error: '초단기예보 조회 실패', data: null };
     }
   }
 };

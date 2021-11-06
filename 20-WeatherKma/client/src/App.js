@@ -41,7 +41,7 @@ function App() {
     const time = getFormatTime();
     (async () => {
       const dataByQuery = await getData({
-        numOfRows: "30",
+        numOfRows: "100",
         pageNo: "1",
         base_date: date,
         base_time: time,
@@ -58,7 +58,8 @@ function App() {
   return (
     <div className="App">
       <h1>WeatherKma - client</h1>
-      <ul className="dataList">
+      <h2>base date & time: {`${getCurrentDate()} ${getFormatTime()}`}</h2>
+      <ol className="dataList">
         {
           isLoading?
             <h2>로딩 중</h2>
@@ -74,7 +75,7 @@ function App() {
             );
           })
         }
-      </ul>
+      </ol>
     </div>
   );
 }
