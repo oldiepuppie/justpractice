@@ -7,16 +7,6 @@ const port = process.env.PORT || 3001;
 
 const { getUltraSrtNcst, getUltraSrtFcst } = require('./utils');
 
-const example = {
-  serviceKey: process.env.KMA_ENCODING_KEY,
-  numOfRows: '10',
-  pageNo: '1',
-  base_date: '20211106',
-  base_time: '1600',
-  nx: '52',
-  ny: '38'
-}
-
 app.use(cors());
 app.use(express.json());
 
@@ -25,22 +15,14 @@ app.get('/', (req, res) => {
 })
 
 app.get('/ultraShortNewForecast', async (req, res) => {
-  const data = await getUltraSrtNcst(example);
+  const data = await getUltraSrtNcst(req.query);
   res.send(data);
 })
 
 app.get('/ultraShortForecast', async (req, res) => {
-  const data = await getUltraSrtFcst(example);
+  const data = await getUltraSrtFcst(req.query);
   res.send(data);
 })
-
-// app.get('/villageForecast', (req, res) => {
-//   res.send('단기예보 조회 결과');
-// })
-
-// app.get('/forecastVersion', (req, res) => {
-//   res.send('예보버전 조회 결과');
-// })
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
