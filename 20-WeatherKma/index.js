@@ -10,7 +10,7 @@ const example = {
   serviceKey: process.env.KMA_ENCODING_KEY,
   numOfRows: '10',
   pageNo: '1',
-  base_date: '20211105',
+  base_date: '20211106',
   base_time: '0600',
   nx: '52',
   ny: '38'

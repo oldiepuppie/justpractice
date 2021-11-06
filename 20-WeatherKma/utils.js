@@ -1,12 +1,11 @@
 require('dotenv').config();
 const axios = require('axios');
-const convert = require('xml-js');
 
 module.exports = {
   getUltraSrtNcst: ({ serviceKey, numOfRows, pageNo, base_date, base_time, nx, ny}) => {
     // 초단기실황 조회
     let ncstExample = `
-      http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey=${serviceKey}&numOfRows=${numOfRows}&pageNo=${pageNo}&base_date=${base_date}&base_time=${base_time}&nx=${nx}&ny=${ny}
+      http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey=${serviceKey}&numOfRows=${numOfRows}&dataType=JSON&pageNo=${pageNo}&base_date=${base_date}&base_time=${base_time}&nx=${nx}&ny=${ny}
     `;
 
     try {
@@ -15,10 +14,9 @@ module.exports = {
           method: 'get',
           url: ncstExample
         })
-        .then(res => res.data)
-        .then(xml => {
-          let json = convert.xml2json(xml, {compact: true, spaces: 4});
-          return json;
+        .then(res => {
+          console.log(res.data);
+          return res.data
         })
         .catch(err => console.log(err))
       );
