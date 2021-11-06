@@ -20,6 +20,7 @@ app.get('/ultraShortNewForecast', async (req, res) => {
 })
 
 app.get('/ultraShortForecast', async (req, res) => {
+  console.log(req.query);
   const data = await getUltraSrtFcst(req.query);
   res.send(data);
 })

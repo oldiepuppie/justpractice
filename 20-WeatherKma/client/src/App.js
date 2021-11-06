@@ -8,8 +8,45 @@ dotenv.config();
 function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  // const getDateNow = () => {
+  //   const dateInfo = new Date();
+  //   const date = dateInfo.toLocaleDateString().slice(0, -1).split('. ').join('');
+
+  //   const rawTime = dateInfo.toLocaleTimeString('en-US', { hour12: false }).slice(0, -3);
+  //   const timeSplit = rawTime.split(':').map(str => Number(str));
+  //   if (timeSplit[1] !== '00' || timeSplit[1] !== '30') {
+  //     if(Number(timeSplit[1]) < 30) {
+  //       timeSplit[1] = '00';
+  //     } else if (Number(timeSplit[1]) >= 30) {
+  //       timeSplit[1] = '30';
+  //     }
+  //   }
+  //   const time = timeSplit.join('');
+
+  //   return { date: date, time: time };
+  // }
+
+  const getCurrentDate = () => {
+    //'20211102' 형식 // 'yyyymmdd'
+    let date = new Date();
+    let year = date.getFullYear().toString();
+    let month = date.getMonth() + 1;
+    month = month < 10 ? "0" + month.toString() : month.toString();
+    let day = date.getDate();
+    day = day < 10 ? "0" + day.toString() : day.toString();
+    return year + month + day;
+}
+
+  const getFormatTime = () => {
+    // 'hhmm' 형식
+    let hourDate = new Date(Date.now() - 45 * 60 * 1000);
+    let hour = hourDate.getHours();
+    hour = hour >= 10 ? hour : "0" + hour;
+    return hour + "" + "30"
+  }
+
   const getData = async ({ numberOfRows, pageNo, base_date, base_time, nx, ny }) => {
-    // ?serviceKey=인증키&numOfRows=10&pageNo=1&base_date=20210628&base_time=0630&nx=55&ny=127
     return axios.get(`http://localhost:4000/ultraShortForecast?numberOfRows=${numberOfRows}&pageNo=${pageNo}&base_date=${base_date}&base_time=${base_time}&nx=${nx}&ny=${ny}`)
     .then(res => {
       return res.data;
@@ -18,15 +55,18 @@ function App() {
   }
 
   useEffect(() => {
+    const date = getCurrentDate();
+    const time = getFormatTime();
     (async () => {
       const dataByQuery = await getData({
         numberOfRows: "10",
         pageNo: "1",
-        base_date: "20211106",
-        base_time: "1800",
+        base_date: date,
+        base_time: time,
         nx: "52",
         ny: "38"
       });
+
       const items = await dataByQuery.response.body.items.item;
       setData(prev => items);
       setIsLoading(prev => false);
