@@ -9,24 +9,6 @@ function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // const getDateNow = () => {
-  //   const dateInfo = new Date();
-  //   const date = dateInfo.toLocaleDateString().slice(0, -1).split('. ').join('');
-
-  //   const rawTime = dateInfo.toLocaleTimeString('en-US', { hour12: false }).slice(0, -3);
-  //   const timeSplit = rawTime.split(':').map(str => Number(str));
-  //   if (timeSplit[1] !== '00' || timeSplit[1] !== '30') {
-  //     if(Number(timeSplit[1]) < 30) {
-  //       timeSplit[1] = '00';
-  //     } else if (Number(timeSplit[1]) >= 30) {
-  //       timeSplit[1] = '30';
-  //     }
-  //   }
-  //   const time = timeSplit.join('');
-
-  //   return { date: date, time: time };
-  // }
-
   const getCurrentDate = () => {
     //'20211102' 형식 // 'yyyymmdd'
     let date = new Date();
