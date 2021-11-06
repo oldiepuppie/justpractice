@@ -7,7 +7,8 @@ dotenv.config();
 
 function App() {
   const [data, setData] = useState([]);
-  const getData = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const getData = async () => {
     return axios.get('http://localhost:4000/ultraShortForecast')
     .then(res => {
       return res.data;
@@ -15,16 +16,35 @@ function App() {
     .catch(err => console.log(err));
   }
 
-  useEffect(async() => {
-    const sampleData = await getData();
-    const items = await sampleData.response.body.items.item;
-    console.log('**useEffect data**', items);
-    setData(sampleData);
+  useEffect(() => {
+    (async () => {
+      const sampleData = await getData();
+      const items = await sampleData.response.body.items.item;
+      setData(prev => items);
+      setIsLoading(prev => false);
+    })();
   },[])
 
   return (
     <div className="App">
-      내용
+      <h1>WeatherKma - client</h1>
+      <ul className="dataList">
+        {
+          isLoading?
+            <h2>로딩 중</h2>
+          :
+          data.map((datum, idx) => {
+            return (
+              <li key={idx} className="content">
+                <ul>
+                  <h3>{`fcstDate, fcstTime: ${datum.fcstDate} ${datum.fcstTime}`}</h3>
+                  <li>{`category, value: ${datum.category} ${datum.fcstValue}`}</li>
+                </ul>
+              </li>
+            );
+          })
+        }
+      </ul>
     </div>
   );
 }
