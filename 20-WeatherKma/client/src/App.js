@@ -25,11 +25,11 @@ function App() {
     let hourDate = new Date(Date.now() - 45 * 60 * 1000);
     let hour = hourDate.getHours();
     hour = hour >= 10 ? hour : "0" + hour;
-    return hour + "" + "30"
+    return hour + "30";
   }
 
-  const getData = async ({ numberOfRows, pageNo, base_date, base_time, nx, ny }) => {
-    return axios.get(`http://localhost:4000/ultraShortForecast?numberOfRows=${numberOfRows}&pageNo=${pageNo}&base_date=${base_date}&base_time=${base_time}&nx=${nx}&ny=${ny}`)
+  const getData = async ({ numOfRows, pageNo, base_date, base_time, nx, ny }) => {
+    return axios.get(`http://localhost:4000/ultraShortForecast?numOfRows=${numOfRows}&pageNo=${pageNo}&base_date=${base_date}&base_time=${base_time}&nx=${nx}&ny=${ny}`)
     .then(res => {
       return res.data;
     })
@@ -41,7 +41,7 @@ function App() {
     const time = getFormatTime();
     (async () => {
       const dataByQuery = await getData({
-        numberOfRows: "10",
+        numOfRows: "30",
         pageNo: "1",
         base_date: date,
         base_time: time,

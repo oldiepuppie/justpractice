@@ -33,6 +33,19 @@ module.exports = {
         })
         .then(res => res.data)
         .catch(err => console.log(err))
+
+        // axios.get('http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst', {
+        //   params: {
+        //     "serviceKey": process.env.KMA_ENCODING_KEY,
+        //     "numOfRows": numOfRows,
+        //     "pageNo": pageNo,
+        //     "dataType": "JSON",
+        //     "base_date": base_date,
+        //     "base_time": base_time,
+        //     "nx": nx,
+        //     "ny": ny
+        //   }
+        // })
       );
     } catch {
       return { error: '초단기예보조회 실패', data: null };
