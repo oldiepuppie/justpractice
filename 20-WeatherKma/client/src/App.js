@@ -41,7 +41,7 @@ function App() {
     const time = getFormatTime();
     (async () => {
       const dataByQuery = await getData({
-        numOfRows: "100",
+        numOfRows: "60",
         pageNo: "1",
         base_date: date,
         base_time: time,
