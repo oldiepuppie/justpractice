@@ -3,6 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 import DataList from "./DataList";
 import Pagination from "./Pagination";
+import PaginationWithArrow from "./PaginationWithArrow";
 
 const AppContainer = styled.div`
   position: relative;
@@ -46,6 +47,7 @@ function App() {
 
   return (
     <AppContainer className="App">
+      <PaginationWithArrow/>
       <h1>pagination</h1>
       <h2>100 / 6</h2>
       <DataList data={slicedData(list)}/>
