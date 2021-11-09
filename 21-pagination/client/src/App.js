@@ -5,6 +5,7 @@ import DataList from "./DataList";
 import Pagination from "./Pagination";
 
 const AppContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +16,7 @@ function App() {
   const [ list, setList ] = useState([]);
   const [ currentPage, setCurrentPage ] = useState(1);
   // 1페이지로 시작
-  const [ itemsPerPage, setItemsPerPage ] = useState(5);
+  const itemsPerPage = 6;
   // 한 페이지에 5개씩 보여준다
 
   useEffect(() => {
@@ -46,8 +47,12 @@ function App() {
   return (
     <AppContainer className="App">
       <h1>pagination</h1>
+      <h2>100 / 6</h2>
       <DataList data={slicedData(list)}/>
-      <Pagination />
+      <Pagination
+        itemsPerPage={Math.ceil(list.length / itemsPerPage)}
+        numberButtonHandler={setCurrentPage}
+      />
     </AppContainer>
   );
 }

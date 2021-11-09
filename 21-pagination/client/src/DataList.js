@@ -1,23 +1,37 @@
-// import { useState, useEffect } from "react";
-// import axios from "axios";
+import styled from "styled-components";
+
+const StyledDataList = styled.ul`
+  box-sizing: border-box;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    width: 40%;
+    padding: 1rem;
+  }
+`;
 
 const DataList = ({ data }) => {
 
   return (
     <div className="dataListContainer">
-      <ul className="dataList">
+      <StyledDataList className="dataList">
         {
           data.map(item => {
             return (
               <li key={item.id} className="listItem">
+                <h3>{item.id}</h3>
                 <p>User ID: {item.userId}</p>
-                <p>Title: {item.title}</p>
-                <p>Contents: {item.body}</p>
+                <h4>{item.title}</h4>
+                <p>{item.body}</p>
               </li>
             );
           })
         }
-      </ul>
+      </StyledDataList>
     </div>
   );
 }
