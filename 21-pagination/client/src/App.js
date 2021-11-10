@@ -47,7 +47,9 @@ function App() {
 
   return (
     <AppContainer className="App">
-      <PaginationWithArrow/>
+      <PaginationWithArrow
+        
+      />
       <h1>pagination</h1>
       <h2>100 / 6</h2>
       <DataList data={slicedData(list)}/>
