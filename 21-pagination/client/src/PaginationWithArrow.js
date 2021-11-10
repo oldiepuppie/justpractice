@@ -4,16 +4,20 @@ import styled from "styled-components";
 const NewPaginationContainer = styled.div.attrs({
   className: "newPagination"
 })`
+  background-color: #fafafa;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50vw;
+  // color: ${props => props.clicked ? '#148F77' : '#545454'};
+  color: #A1A1A1;
+  font-weight: bold;
 `;
 
 const PageNumbersList = styled.ul.attrs({
   className: "pageNumbersList"
 })`
-  width: 70%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -21,13 +25,24 @@ const PageNumbersList = styled.ul.attrs({
   padding: 0 1rem;
 `;
 
+const ArrowButton = styled.span.attrs({
+  className: "arrow"
+})`
+  &:hover {
+    color: black;
+  }
+`;
+
 const PageNumberItem = styled.li.attrs({
   className: "pageNumberItem"
 })`
   padding: 0 1rem;
+  &:hover {
+    color: black;
+  }
 `;
 
-/* TODO
+/*
   props
   - 모든 페이지의 갯수
   - numbersPerRow
@@ -42,6 +57,9 @@ const PaginationWithArrow = ({dataLength, unit, numberButtonClickHandler}) => {
   const [lastIdx, setLastIdx] = useState(unit);
   const cutArrInit = new Array(unit).fill(0).map((el, idx) => idx + 1);
   const [cutArr, setCutArr] = useState(cutArrInit);
+  // const [clicked, setClicked] = useState(false);
+  // const [isNoPrev, setIsNoPrev] = useState(true);
+  // const [isNoNext, setIsNoNext] = useState(false);
 
   const prevHandler = () => {
     if(startIdx === 0) return;
@@ -60,6 +78,7 @@ const PaginationWithArrow = ({dataLength, unit, numberButtonClickHandler}) => {
 
   useEffect(()=>{
     let tempIdxEnd = Math.ceil(numberArr.length/unit) * unit;
+
     if(startIdx >= unit || lastIdx <= tempIdxEnd) {
       const result = numberArr.slice(startIdx, lastIdx);
       setCutArr(prev => result);
@@ -68,9 +87,9 @@ const PaginationWithArrow = ({dataLength, unit, numberButtonClickHandler}) => {
 
   return (
     <NewPaginationContainer>
-      <span className="prevButton" onClick={prevHandler}>
+      <ArrowButton className="prevButton" onClick={prevHandler}>
         ⬅️
-      </span>
+      </ArrowButton>
       <PageNumbersList>
         {
           cutArr.map(number => {
@@ -78,7 +97,9 @@ const PaginationWithArrow = ({dataLength, unit, numberButtonClickHandler}) => {
               <PageNumberItem
                 key={number}
                 id={number}
-                onClick={() => numberButtonClickHandler(number)}
+                onClick={() => {
+                  numberButtonClickHandler(number);
+                }}
               >
                 {number}
               </PageNumberItem>
@@ -86,9 +107,9 @@ const PaginationWithArrow = ({dataLength, unit, numberButtonClickHandler}) => {
           })
         }
       </PageNumbersList>
-      <span className="nextButton" onClick={nextHandler}>
+      <ArrowButton className="nextButton" onClick={nextHandler}>
         ➡️
-      </span>
+      </ArrowButton>
     </NewPaginationContainer>
   );
 }

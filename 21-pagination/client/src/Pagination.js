@@ -18,7 +18,6 @@ const PageUl = styled.ul`
 
   & > li {
     font-weight: bold;
-    margin: 0 .25rem;
     cursor: pointer;
   }
 
