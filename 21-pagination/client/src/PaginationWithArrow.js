@@ -5,7 +5,7 @@ const NewPaginationContainer = styled.div.attrs({
   className: "newPagination"
 })`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 50vw;
 `;
@@ -13,9 +13,12 @@ const NewPaginationContainer = styled.div.attrs({
 const PageNumbersList = styled.ul.attrs({
   className: "pageNumbersList"
 })`
+  width: 50%;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   list-style-type: none;
+  padding: 0 1rem;
 `;
 
 const PageNumberItem = styled.li.attrs({
@@ -32,7 +35,7 @@ const PageNumberItem = styled.li.attrs({
   - 숫자 버튼에 들어갈 handler 함수
 */
 
-const PaginationWithArrow = ({}) => {
+const PaginationWithArrow = () => {
   // const [ pageNumbers, setPageNumbers ] = useState([1,2,3,4,5,6,7,8,9,10]);
 
   // const numberArr = new Array(numberOfPages).fill(0).map((el, idx) => idx + 1);
@@ -49,19 +52,27 @@ const PaginationWithArrow = ({}) => {
 
   // TODO 인덱스가 0~12 범위를 넘어가면 동작하지 않게 바꾸기
   const prevHandler = () => {
-    console.log('prev button works');
+    if(startIdx < numbersPerRow) return;
+    console.log('**prev**')
     setStartIdx(prev => prev - numbersPerRow);
     setLastIdx(prev => prev - numbersPerRow);
   }
 
   const nextHandler = () => {
-    console.log('next button works');
+    let tempIdxEnd = Math.ceil(numberArr.length/numbersPerRow) * numbersPerRow;
+    if(lastIdx >= tempIdxEnd) return;
+    console.log('**next**')
     setStartIdx(prev => prev + numbersPerRow);
     setLastIdx(prev => prev + numbersPerRow);
   }
 
   useEffect(()=>{
-    setCutArr(prev => numberArr.slice(startIdx, lastIdx));
+    console.log(startIdx);
+    let tempIdxEnd = Math.ceil(numberArr.length/numbersPerRow) * numbersPerRow;
+    if(startIdx >= numbersPerRow || lastIdx <= tempIdxEnd) {
+      const result = numberArr.slice(startIdx, lastIdx);
+      setCutArr(prev => result);
+    }
   }, [startIdx, lastIdx])
 
   return (
