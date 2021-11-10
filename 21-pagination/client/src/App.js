@@ -48,7 +48,9 @@ function App() {
   return (
     <AppContainer className="App">
       <PaginationWithArrow
-        
+        dataLength={list.length}
+        unit={5}
+        numberButtonClickHandler={setCurrentPage}
       />
       <h1>pagination</h1>
       <h2>100 / 6</h2>

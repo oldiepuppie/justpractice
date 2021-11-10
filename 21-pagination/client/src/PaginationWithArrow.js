@@ -13,7 +13,7 @@ const NewPaginationContainer = styled.div.attrs({
 const PageNumbersList = styled.ul.attrs({
   className: "pageNumbersList"
 })`
-  width: 50%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -35,41 +35,32 @@ const PageNumberItem = styled.li.attrs({
   - 숫자 버튼에 들어갈 handler 함수
 */
 
-const PaginationWithArrow = () => {
-  // const [ pageNumbers, setPageNumbers ] = useState([1,2,3,4,5,6,7,8,9,10]);
-
-  // const numberArr = new Array(numberOfPages).fill(0).map((el, idx) => idx + 1);
-  const numberArr = [1,2,3,4,5,6,7,8,9,10,11,12];
+const PaginationWithArrow = ({dataLength, unit, numberButtonClickHandler}) => {
+  const numberOfPages = Math.ceil(dataLength / unit);
+  const numberArr = new Array(numberOfPages).fill(0).map((el, idx) => idx + 1);
   const [startIdx, setStartIdx] = useState(0);
-  const numbersPerRow = 5;
-  const [lastIdx, setLastIdx] = useState(numbersPerRow);
-  const [cutArr, setCutArr] = useState(numberArr.slice(startIdx, numbersPerRow));
+  const [lastIdx, setLastIdx] = useState(unit);
+  const cutArrInit = new Array(unit).fill(0).map((el, idx) => idx + 1);
+  const [cutArr, setCutArr] = useState(cutArrInit);
 
-  // 5개씩 보여줄 것이다
-  // numberArr.slice(0,5)
-  // numberArr.slice(5,10)
-  // numberArr.slice(10,15)이지만 결과는 === numberArr.slice(10,12)
-
-  // TODO 인덱스가 0~12 범위를 넘어가면 동작하지 않게 바꾸기
   const prevHandler = () => {
-    if(startIdx < numbersPerRow) return;
-    console.log('**prev**')
-    setStartIdx(prev => prev - numbersPerRow);
-    setLastIdx(prev => prev - numbersPerRow);
+    if(startIdx === 0) return;
+    console.log('**prev**');
+    setStartIdx(prev => prev - unit);
+    setLastIdx(prev => prev - unit);
   }
 
   const nextHandler = () => {
-    let tempIdxEnd = Math.ceil(numberArr.length/numbersPerRow) * numbersPerRow;
-    if(lastIdx >= tempIdxEnd) return;
-    console.log('**next**')
-    setStartIdx(prev => prev + numbersPerRow);
-    setLastIdx(prev => prev + numbersPerRow);
+    let tempIdxEnd = Math.ceil(numberArr.length/unit) * unit;
+    if(lastIdx === tempIdxEnd) return;
+    console.log('**next**');
+    setStartIdx(prev => prev + unit);
+    setLastIdx(prev => prev + unit);
   }
 
   useEffect(()=>{
-    console.log(startIdx);
-    let tempIdxEnd = Math.ceil(numberArr.length/numbersPerRow) * numbersPerRow;
-    if(startIdx >= numbersPerRow || lastIdx <= tempIdxEnd) {
+    let tempIdxEnd = Math.ceil(numberArr.length/unit) * unit;
+    if(startIdx >= unit || lastIdx <= tempIdxEnd) {
       const result = numberArr.slice(startIdx, lastIdx);
       setCutArr(prev => result);
     }
@@ -87,6 +78,7 @@ const PaginationWithArrow = () => {
               <PageNumberItem
                 key={number}
                 id={number}
+                onClick={() => numberButtonClickHandler(number)}
               >
                 {number}
               </PageNumberItem>
@@ -102,3 +94,10 @@ const PaginationWithArrow = () => {
 }
 
 export default PaginationWithArrow;
+
+// [idea]
+// 5개씩 보여줄 것이다
+  // numberArr.slice(0,5)
+  // numberArr.slice(5,10)
+  // numberArr.slice(10,15)이지만 결과는 === numberArr.slice(10,12)
+// 인덱스가 0~15 범위를 넘어가면 동작하지 않게 바꾸기
