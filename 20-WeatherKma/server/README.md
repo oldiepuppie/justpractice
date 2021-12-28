@@ -18,6 +18,7 @@ axios 요청으로 기상청 데이터를 받아와서 클라이언트의 요청
 - 반환 시도
   - pending만 반환함
     - **async, await 사용 후 제대로 동작함**
+- NodeJS는 commonJS  
 ### 응답 예시
 - **xml**
   ```xml
