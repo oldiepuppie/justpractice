@@ -5,7 +5,8 @@ function Counter({ number, diff, onIncrease, onDecrease, onSetDiff }) {
 
   return (
     <div>
-      <h1>{number}</h1>
+      <h1>Counter</h1>
+      <h2>{number}</h2>
       <div>
         <input type="number" value={diff} min="1" onChange={onChange} />
         <button onClick={onIncrease}>+</button>
