@@ -7,8 +7,12 @@ import { Provider } from "react-redux";
 import rootReducer from "./modules/index";
 // import myLogger from "./middlewares/myLoggers";
 import logger from "redux-logger";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(logger))
+);
 
 ReactDOM.render(
   <Provider store={store}>
