@@ -13,7 +13,7 @@ function PostListContainer() {
 
   return (
     <div>
-      <h2>PostListContainer</h2>
+      <h2>Post List Container</h2>
       {loading ? (
         <div>로딩중...</div>
       ) : error ? (
