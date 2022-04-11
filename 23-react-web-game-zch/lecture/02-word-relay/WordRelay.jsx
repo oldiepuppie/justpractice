@@ -2,11 +2,13 @@ const React = require("react");
 const { Component } = React;
 
 class WordRelay extends Component {
-  state = {};
+  state = {
+    text: "are you working?",
+  };
 
-  render() {}
+  render() {
+    return <h1>{this.state.text}</h1>;
+  }
 }
 
-// TODO
-// ReactDom.render(<${컴포넌트} />);
 module.exports = WordRelay;
