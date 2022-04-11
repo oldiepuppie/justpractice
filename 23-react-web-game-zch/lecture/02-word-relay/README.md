@@ -48,7 +48,10 @@
     name: "wordrelay-setting",
     // ...생략
     entry: {
-      app: ["./Client"],
+      app: ["./client"],
+    },
+    module: {
+      // ... 바벨 관련 세팅
     },
     output: {
       path: path.join(__dirname, "dist"),
@@ -63,7 +66,7 @@
   npx webpack
   ```
 
-  `webpack.config.js`에서 `entry`에 작성한 파일의 내용을 `output`에서 지정한 위치(path)의 파일(filename)에 파싱하여 작성한다.
+  - `entry`의 파일에 --- `module` 적용 ===> `output`에 지정한 파일에 스크립트가 파싱/작성됨.
 
 ## 2-5. 웹팩으로 빌드하기
 
@@ -76,7 +79,7 @@
   ```
 
   - 원인
-    - jsx(`<WordRelay />`)는 자바스크립트 문법이 아니다.
+    - jsx(`<WordRelay />`)는 자바스크립트 문법이 아니라 인식을 못한다.
   - 해결 방법
     1. 바벨에 jsx 세팅
     2. 웹팩에 1의 바벨 세팅
