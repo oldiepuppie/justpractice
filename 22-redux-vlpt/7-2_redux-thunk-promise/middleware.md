@@ -21,6 +21,9 @@
   };
   ```
 
+## [Updates to Client Rendering APIs
+](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis)
+
 ## 미들웨어의 사용
 
 - "미들웨어 안에서는 무엇이든지 할 수 있습니다."
