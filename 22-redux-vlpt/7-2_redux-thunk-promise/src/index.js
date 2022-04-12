@@ -5,10 +5,12 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { logger } from 'redux-logger';
 import rootReducer from './modules'
+import ReduxThunk from 'redux-thunk';
 
-const store = createStore(rootReducer, applyMiddleware(logger));
 const container = document.getElementById('root');
 const root = createRoot(container);
+
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk, logger));
 
 root.render(
   <Provider store={store}>
