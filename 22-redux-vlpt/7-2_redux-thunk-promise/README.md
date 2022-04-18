@@ -1,12 +1,18 @@
 # 7-redux-middleware
 
 ## TODO
-### 먼저
-- [ ] [7-7 / thunk에서 라우터 연동하기]
-### 나중에
-- [ ] [7-5 / redux-thunk로 프로미스 다루기] '리덕스 모듈 리팩토링하기' 부분
-- [ ] [7-6 / API 재로딩 문제 해결하기]
 
+### 진행 순서 (4/13 이후)
+
+1. [ ] [7-7], [7-8], [7-9], [7-10], [7-11], [7-12]
+2. [ ] [7-5]에서 '리덕스 모듈 리팩토링하기' 부분, [7-6]
+
+### 주의
+
+- 커밋 현황, 디렉토리 depth 확인하고 push하기
+- 브랜치 운용
+  - `working` 브랜치에서 redux-thunk 진행 -> `main`으로 병합
+  - `working`에서 redux-saga 진행 -> `main` 병합
 
 ## 화살표함수와 클로저
 
@@ -27,8 +33,7 @@
   };
   ```
 
-## [Updates to Client Rendering APIs
-](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis)
+## [Updates to Client Rendering APIs](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis)
 
 ## 미들웨어의 사용
 

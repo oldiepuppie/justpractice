@@ -1,14 +1,14 @@
-import * as postsAPI from '../api/posts';
+import * as postsAPI from "../api/posts";
 
-const GET_POSTS = 'GET_POSTS';
-const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS';
-const GET_POSTS_ERROR = 'GET_POSTS_ERROR';
+const GET_POSTS = "GET_POSTS";
+const GET_POSTS_SUCCESS = "GET_POSTS_SUCCESS";
+const GET_POSTS_ERROR = "GET_POSTS_ERROR";
 
-const GET_POST = 'GET_POST';
-const GET_POST_SUCCESS = 'GET_POST_SUCCESS';
-const GET_POST_ERROR = 'GET_POST_ERROR';
+const GET_POST = "GET_POST";
+const GET_POST_SUCCESS = "GET_POST_SUCCESS";
+const GET_POST_ERROR = "GET_POST_ERROR";
 
-export const getPosts = () => async dispatch => {
+export const getPosts = () => async (dispatch) => {
   // 요청 시작
   dispatch({ type: GET_POSTS });
 
@@ -20,9 +20,9 @@ export const getPosts = () => async dispatch => {
     // 에러 처리
     dispatch({ type: GET_POSTS_ERROR, error: e });
   }
-}
+};
 
-export const getPost = id => async dispatch => {
+export const getPost = (id) => async (dispatch) => {
   dispatch({ type: GET_POST });
 
   try {
@@ -31,20 +31,27 @@ export const getPost = id => async dispatch => {
   } catch (e) {
     dispatch({ type: GET_POST_ERROR, error: e });
   }
-}
+};
+
+export const goToHome =
+  () =>
+  (dispatch, getState, { history }) => {
+    console.log(dispatch, getState, history);
+    history.push("/");
+  };
 
 const initialState = {
   posts: {
     loading: false,
     data: null,
-    error: null
+    error: null,
   },
   post: {
     loading: false,
     data: null,
-    error: null
+    error: null,
   },
-}
+};
 
 export default function posts(state = initialState, action) {
   switch (action.type) {
@@ -54,54 +61,54 @@ export default function posts(state = initialState, action) {
         posts: {
           loading: true,
           data: null,
-          error: null
-        }
-      }
+          error: null,
+        },
+      };
     case GET_POSTS_SUCCESS:
       return {
         ...state,
         posts: {
           loading: false,
           data: action.posts,
-          error: null
-        }
-      }
+          error: null,
+        },
+      };
     case GET_POSTS_ERROR:
       return {
         ...state,
         posts: {
           loading: false,
           data: null,
-          error: action.error
-        }
-      }
+          error: action.error,
+        },
+      };
     case GET_POST:
       return {
         ...state,
         post: {
           loading: true,
           data: null,
-          error: null
-        }
-      }
+          error: null,
+        },
+      };
     case GET_POST_SUCCESS:
       return {
         ...state,
         post: {
           loading: false,
           data: action.post,
-          error: null
-        }
-      }
+          error: null,
+        },
+      };
     case GET_POST_ERROR:
       return {
         ...state,
         post: {
           loading: false,
           data: null,
-          error: action.error
-        }
-      }
+          error: action.error,
+        },
+      };
     default:
       return state;
   }
