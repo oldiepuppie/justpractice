@@ -33,10 +33,10 @@ export const getPost = (id) => async (dispatch) => {
   }
 };
 
+// FIXME
 export const goToHome =
   () =>
   (dispatch, getState, { history }) => {
-    console.log(dispatch, getState, history);
     history.push("/");
   };
 

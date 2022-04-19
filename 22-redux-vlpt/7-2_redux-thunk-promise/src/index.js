@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { logger } from "redux-logger";
 import rootReducer from "./modules";
 import ReduxThunk from "redux-thunk";
-import { BrowserRouter } from "react-router-dom";
+import { Router, BrowserRouter } from "react-router-dom"; // FIXME
 import { createBrowserHistory } from "history";
 
 const container = document.getElementById("root");
@@ -23,6 +23,7 @@ const store = createStore(
 
 root.render(
   <BrowserRouter history={customHistory}>
+    {/* FIXME */}
     <Provider store={store}>
       <App />
     </Provider>

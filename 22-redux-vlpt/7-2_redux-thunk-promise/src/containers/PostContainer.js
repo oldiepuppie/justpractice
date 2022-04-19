@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getPost, goToHome } from "../modules/posts";
+import { getPost, goToHome } from "../modules/posts"; // FIXME
 import Post from "../components/Post";
+import { useNavigate } from "react-router-dom";
 
 function PostContainer({ postId }) {
   const { data, loading, error } = useSelector((state) => state.posts.post);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getPost(postId));
@@ -19,7 +21,7 @@ function PostContainer({ postId }) {
     <div>
       <button
         onClick={() => {
-          dispatch(goToHome());
+          navigate("/");
         }}
       >
         홈으로 이동
