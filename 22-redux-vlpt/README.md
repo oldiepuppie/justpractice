@@ -8,3 +8,9 @@
 **redux-toolkit**
 
 - [ ] redux-toolkit
+  - https://redux-toolkit.js.org/tutorials/quick-start
+    - `configureStore`
+    - `createSlice`
+    - `useSelector`
+    - `useDispatch` -> `dispatch`
+    - `Provide`
