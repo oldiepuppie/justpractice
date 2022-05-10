@@ -43,7 +43,7 @@ const PostsList = () => {
 
   const getPosts = (e) => {
     if (posts.length === 21) {
-      alert("All the posts have loaded.");
+      alert("불러올 게시물이 없습니다.");
     } else {
       dispatch(fetchPosts());
     }
