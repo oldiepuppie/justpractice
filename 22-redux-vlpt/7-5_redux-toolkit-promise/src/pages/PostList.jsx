@@ -13,6 +13,11 @@ const StyledUl = styled.ul`
   padding: 0;
 `;
 
+const StyledH2 = styled.h2`
+  margin: 0;
+  padding: 0;
+`;
+
 const StyledH3 = styled.h3`
   margin: 0;
   padding: 0;
@@ -25,12 +30,14 @@ const StyledH4 = styled.h4`
 `;
 
 const StyledLi = styled.li`
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   padding: 0;
 `;
 
-const StyledP = styled.p`
-  margin: 0 1rem 0;
+const UsernameListed = styled.p`
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: #626567;
 `;
 
 const PostsList = () => {
@@ -49,22 +56,21 @@ const PostsList = () => {
 
   return (
     <div>
-      <button onClick={getPosts}>DISPATCH</button>
+      <button onClick={getPosts}>게시물 불러오기</button>
       <StyledUl>
         <StyledH3>status and error</StyledH3>
         <li>{`posts status: ${postsStatus}`}</li>
         <li>{`posts error: ${postsError}`}</li>
       </StyledUl>
       <StyledUl>
-        <StyledH3>posts</StyledH3>
+        <StyledH2>posts</StyledH2>
         {posts.map(({ id, username, title }) => {
           return (
             <StyledLi key={id}>
               <StyledH4>
-                {`${id}`}
                 <Link to={`${id}`}>{`${title}`}</Link>
               </StyledH4>
-              <StyledP>{username}</StyledP>
+              <UsernameListed>{username}</UsernameListed>
             </StyledLi>
           );
         })}

@@ -7,17 +7,20 @@ import styled from "styled-components";
 const GrayBackgroundSpan = styled.span`
   background-color: #ebedef;
 `;
-const FontSizeDecreasedSpan = styled.span`
-  margin-left: 1rem;
-  font-size: 0.7em;
+
+export const Username = styled.p`
+  margin-left: 0;
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #909497;
 `;
 
 const Post = () => {
   const post = useSelector(selectPost);
+  const { title, username, content } = post;
   const dispatch = useDispatch();
 
   const { id } = useParams();
-
   useEffect(() => {
     dispatch(fetchPostById(id));
   }, [id, dispatch]);
@@ -25,11 +28,19 @@ const Post = () => {
   return (
     <div>
       <h2>post</h2>
-      <h3>
-        <GrayBackgroundSpan>{`${post.title}`}</GrayBackgroundSpan>
-        <FontSizeDecreasedSpan>{`${post.username}`}</FontSizeDecreasedSpan>
-      </h3>
-      <p>{post.content}</p>
+      {!title || !username || !content ? (
+        <h3>
+          <GrayBackgroundSpan>게시물이 없습니다</GrayBackgroundSpan>
+        </h3>
+      ) : (
+        <div>
+          <h3>
+            <GrayBackgroundSpan>{`${title}`}</GrayBackgroundSpan>
+            <Username>{`${username}`}</Username>
+          </h3>
+          <p>{content}</p>
+        </div>
+      )}
     </div>
   );
 };
