@@ -17,6 +17,15 @@ const initialState = {
 export const fetchPosts = createAsyncThunk("get/posts", async () => {
   try {
     const res = await axios.get("http://localhost:4000/posts");
+    return res.data;
+  } catch (err) {
+    return err.message;
+  }
+});
+
+export const fetchPostById = createAsyncThunk("get/post", async (id) => {
+  try {
+    const res = await axios.get(`http://localhost:4000/posts/${id}`);
     return [...res.data];
   } catch (err) {
     return err.message;
@@ -29,7 +38,7 @@ const postsSlice = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder
-      .addCase(fetchPosts.pending, (state, action) => {
+      .addCase(fetchPosts.pending, (state) => {
         state.status = "loading";
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
