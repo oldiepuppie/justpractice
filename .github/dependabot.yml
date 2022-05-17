@@ -7,26 +7,26 @@ updates:
       day: "wednesday"
       timezone: "Asia/Seoul"
   - package-ecosystem: "npm"
-      directory: "/03_props-state"
-      schedule:
-        interval: "weekly"
-        day: "wednesday"
-        timezone: "Asia/Seoul"
+    directory: "/03_props-state"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+      timezone: "Asia/Seoul"
   - package-ecosystem: "npm"
-      directory: "/05_proverb-to-title"
-      schedule:
-        interval: "weekly"
-        day: "wednesday"
-        timezone: "Asia/Seoul"
+    directory: "/05_proverb-to-title"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+      timezone: "Asia/Seoul"
   - package-ecosystem: "npm"
-      directory: "/06_weather-api"
-      schedule:
-        interval: "weekly"
-        day: "wednesday"
-        timezone: "Asia/Seoul"
+    directory: "/06_weather-api"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+      timezone: "Asia/Seoul"
   - package-ecosystem: "npm"
-      directory: "/07_express-tryout"
-      schedule:
-        interval: "weekly"
-        day: "wednesday"
-        timezone: "Asia/Seoul"
+    directory: "/07_express-tryout"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+      timezone: "Asia/Seoul"
