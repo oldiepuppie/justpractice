@@ -1,23 +1,8 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/0*"
+    directory: "/02_simpleroute"
     schedule:
       interval: "weekly"
       day: "wednesday"
       timezone: "Asia/Seoul"
-    open-pull-requests-limit: 5
-  - package-ecosystem: "npm"
-    directory: "/1*"
-    schedule:
-      interval: "weekly"
-      day: "wednesday"
-      timezone: "Asia/Seoul"
-    open-pull-requests-limit: 5
-  - package-ecosystem: "npm"
-    directory: "/2*"
-    schedule:
-      interval: "weekly"
-      day: "wednesday"
-      timezone: "Asia/Seoul"
-    open-pull-requests-limit: 5
